@@ -1,12 +1,19 @@
 @charset "utf-8";
 
-.jigsaw-wrap{
-    --piece-shape-scale:calc(100 / 70);
-
+:root{
     --jigsaw-width:500px;
     --jigsaw-height:400px;
     --div-x:3;
     --div-y:3;
+}
+.jigsaw-wrap{
+    --piece-shape-scale:calc(100 / 70);
+
+    /* 외부에서 따로 설정하라! 여기서 기본 설정을 하지 않는다!
+    --jigsaw-width:500px;
+    --jigsaw-height:400px;
+    --div-x:3;
+    --div-y:3; */
 
     /* --background-image 외부에서 필요시 설정하라! */
     --piece-wrap-width:calc(var(--jigsaw-width) /var(--div-x) );
