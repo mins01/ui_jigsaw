@@ -1,15 +1,21 @@
 @charset "utf-8";
 
-.jigsaw-wrap{
-    --piece-shape-scale:calc(100 / 70);
-
+:root{
     --jigsaw-width:500px;
     --jigsaw-height:400px;
     --div-x:3;
     --div-y:3;
-    /* --background-image:url(361331715_1995055744165677_6676229993515938374_n.jpg); */
-    --background-image:none;
+}
+.jigsaw-wrap{
+    --piece-shape-scale:calc(100 / 70);
 
+    /* 외부에서 따로 설정하라! 여기서 기본 설정을 하지 않는다!
+    --jigsaw-width:500px;
+    --jigsaw-height:400px;
+    --div-x:3;
+    --div-y:3; */
+
+    /* --background-image 외부에서 필요시 설정하라! */
     --piece-wrap-width:calc(var(--jigsaw-width) /var(--div-x) );
     --piece-wrap-height:calc(var(--jigsaw-height) /var(--div-y) );
 
@@ -19,7 +25,6 @@
     width: max-content;
     margin:0 auto;
 
-    /* background-image: url(361331715_1995055744165677_6676229993515938374_n.jpg); */
     background-color: #fff;
     background-size: var(--jigsaw-width) var(--jigsaw-height);
     width:var(--jigsaw-width);
@@ -83,6 +88,16 @@
 .jigsaw-wrap .piece-wrap[data-pos-x="7"]{ --pos-x:-7;}
 .jigsaw-wrap .piece-wrap[data-pos-x="8"]{ --pos-x:-8;}
 .jigsaw-wrap .piece-wrap[data-pos-x="9"]{ --pos-x:-9;}
+.jigsaw-wrap .piece-wrap[data-pos-x="10"]{ --pos-x:-10;}
+.jigsaw-wrap .piece-wrap[data-pos-x="11"]{ --pos-x:-11;}
+.jigsaw-wrap .piece-wrap[data-pos-x="12"]{ --pos-x:-12;}
+.jigsaw-wrap .piece-wrap[data-pos-x="13"]{ --pos-x:-13;}
+.jigsaw-wrap .piece-wrap[data-pos-x="14"]{ --pos-x:-14;}
+.jigsaw-wrap .piece-wrap[data-pos-x="15"]{ --pos-x:-15;}
+.jigsaw-wrap .piece-wrap[data-pos-x="16"]{ --pos-x:-16;}
+.jigsaw-wrap .piece-wrap[data-pos-x="17"]{ --pos-x:-17;}
+.jigsaw-wrap .piece-wrap[data-pos-x="18"]{ --pos-x:-18;}
+.jigsaw-wrap .piece-wrap[data-pos-x="19"]{ --pos-x:-19;}
 .jigsaw-wrap .piece-wrap[data-pos-y="0"]{ --pos-y:-0;}
 .jigsaw-wrap .piece-wrap[data-pos-y="1"]{ --pos-y:-1;}
 .jigsaw-wrap .piece-wrap[data-pos-y="2"]{ --pos-y:-2;}
@@ -93,6 +108,16 @@
 .jigsaw-wrap .piece-wrap[data-pos-y="7"]{ --pos-y:-7;}
 .jigsaw-wrap .piece-wrap[data-pos-y="8"]{ --pos-y:-8;}
 .jigsaw-wrap .piece-wrap[data-pos-y="9"]{ --pos-y:-9;}
+.jigsaw-wrap .piece-wrap[data-pos-y="10"]{ --pos-y:-10;}
+.jigsaw-wrap .piece-wrap[data-pos-y="11"]{ --pos-y:-11;}
+.jigsaw-wrap .piece-wrap[data-pos-y="12"]{ --pos-y:-12;}
+.jigsaw-wrap .piece-wrap[data-pos-y="13"]{ --pos-y:-13;}
+.jigsaw-wrap .piece-wrap[data-pos-y="14"]{ --pos-y:-14;}
+.jigsaw-wrap .piece-wrap[data-pos-y="15"]{ --pos-y:-15;}
+.jigsaw-wrap .piece-wrap[data-pos-y="16"]{ --pos-y:-16;}
+.jigsaw-wrap .piece-wrap[data-pos-y="17"]{ --pos-y:-17;}
+.jigsaw-wrap .piece-wrap[data-pos-y="18"]{ --pos-y:-18;}
+.jigsaw-wrap .piece-wrap[data-pos-y="19"]{ --pos-y:-19;}
 .jigsaw-wrap .piece-shape{ 
     background-position: 
     calc(var(--jigsaw-width) / var(--div-x) * var(--pos-x) + var(--shape-uneven-x))
