@@ -87,7 +87,7 @@
                 </div>
             </div>
             <div class="card-body"  style="background-color: #fee; ">
-                <div class="piece-container clip-zigzag">
+                <div class="piece-container" data-shape="clip-zigzag">
                     <div id="div-pieces" class="test-flex">
 
                     </div>
@@ -107,12 +107,13 @@
             let ta = event.target;
             let val = ta.value;
             let pieceContainer = document.querySelector('.piece-container');
-            [...ta.options].forEach(option => {
-                if(option.value==''){return}
-                pieceContainer.classList.remove(option.value);
-            })
-            if(ta.value != '')
-            pieceContainer.classList.add(ta.value)
+            pieceContainer.dataset.shape=ta.value;
+            // [...ta.options].forEach(option => {
+            //     if(option.value==''){return}
+            //     pieceContainer.classList.remove(option.value);
+            // })
+            // if(ta.value != '')
+            // pieceContainer.classList.add(ta.value)
         }
         window.addEventListener('load',(event)=>{
             let tops = ['n','0','p'];

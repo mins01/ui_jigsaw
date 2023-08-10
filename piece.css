@@ -89,8 +89,8 @@
 
 
 /* .piece-shape.clip-zigzag */
-.piece-container.clip-zigzag .piece-shape,
-.piece-shape.clip-zigzag{
+.piece-container.clip-zigzag .piece-shape, .piece-container[data-shape="clip-zigzag"] .piece-shape,
+.piece-shape.clip-zigzag , .piece-shape[data-shape="clip-zigzag"]{
 
     --uneven:calc(100% * var(--piece-uneven-ratio));
     --top:calc(var(--uneven) - var(--shape-multiple-top) * var(--uneven));
@@ -110,8 +110,8 @@
     );
 }
 
-.piece-container.clip-rect .piece-shape,
-.piece-shape.clip-rect{
+.piece-container.clip-rect .piece-shape, .piece-container[data-shape="clip-rect"] .piece-shape,
+.piece-shape.clip-rect , .piece-shape[data-shape="clip-rect"]{
     --uneven:calc(100% * var(--piece-uneven-ratio));
     --top:calc(var(--uneven) - var(--shape-multiple-top) * var(--uneven) );
     --right:calc(100% - (var(--uneven) - var(--shape-multiple-right) * var(--uneven)) );
@@ -130,27 +130,27 @@
         15% 42.5%);
 }
 
-:is(.piece-container.clip-zigzag .piece-shape, .piece-shape.clip-zigzag , .piece-container.clip-rect .piece-shape, .piece-shape.clip-rect)[data-shape-top="0"]{ --shape-multiple-top:0; }
-:is(.piece-container.clip-zigzag .piece-shape, .piece-shape.clip-zigzag , .piece-container.clip-rect .piece-shape, .piece-shape.clip-rect)[data-shape-top="p"]{ --shape-multiple-top:1; }
-:is(.piece-container.clip-zigzag .piece-shape, .piece-shape.clip-zigzag , .piece-container.clip-rect .piece-shape, .piece-shape.clip-rect)[data-shape-top="n"]{ --shape-multiple-top:-1; }
+:is(.piece-container.clip-zigzag .piece-shape, .piece-container[data-shape="clip-zigzag"] .piece-shape, .piece-shape.clip-zigzag , .piece-shape[data-shape="clip-zigzag"] , .piece-container.clip-rect .piece-shape, .piece-container[data-shape="clip-rect"] .piece-shape, .piece-shape.clip-rect, .piece-shape[data-shape="clip-rect"])[data-shape-top="0"]{ --shape-multiple-top:0; }
+:is(.piece-container.clip-zigzag .piece-shape, .piece-container[data-shape="clip-zigzag"] .piece-shape, .piece-shape.clip-zigzag , .piece-shape[data-shape="clip-zigzag"] , .piece-container.clip-rect .piece-shape, .piece-container[data-shape="clip-rect"] .piece-shape, .piece-shape.clip-rect, .piece-shape[data-shape="clip-rect"])[data-shape-top="p"]{ --shape-multiple-top:1; }
+:is(.piece-container.clip-zigzag .piece-shape, .piece-container[data-shape="clip-zigzag"] .piece-shape, .piece-shape.clip-zigzag , .piece-shape[data-shape="clip-zigzag"] , .piece-container.clip-rect .piece-shape, .piece-container[data-shape="clip-rect"] .piece-shape, .piece-shape.clip-rect, .piece-shape[data-shape="clip-rect"])[data-shape-top="n"]{ --shape-multiple-top:-1; }
 
-:is(.piece-container.clip-zigzag .piece-shape, .piece-shape.clip-zigzag , .piece-container.clip-rect .piece-shape, .piece-shape.clip-rect)[data-shape-right="0"]{ --shape-multiple-right:0; }
-:is(.piece-container.clip-zigzag .piece-shape, .piece-shape.clip-zigzag , .piece-container.clip-rect .piece-shape, .piece-shape.clip-rect)[data-shape-right="p"]{ --shape-multiple-right:1; }
-:is(.piece-container.clip-zigzag .piece-shape, .piece-shape.clip-zigzag , .piece-container.clip-rect .piece-shape, .piece-shape.clip-rect)[data-shape-right="n"]{ --shape-multiple-right:-1; }
+:is(.piece-container.clip-zigzag .piece-shape, .piece-container[data-shape="clip-zigzag"] .piece-shape, .piece-shape.clip-zigzag , .piece-shape[data-shape="clip-zigzag"] , .piece-container.clip-rect .piece-shape, .piece-container[data-shape="clip-rect"] .piece-shape, .piece-shape.clip-rect, .piece-shape[data-shape="clip-rect"])[data-shape-right="0"]{ --shape-multiple-right:0; }
+:is(.piece-container.clip-zigzag .piece-shape, .piece-container[data-shape="clip-zigzag"] .piece-shape, .piece-shape.clip-zigzag , .piece-shape[data-shape="clip-zigzag"] , .piece-container.clip-rect .piece-shape, .piece-container[data-shape="clip-rect"] .piece-shape, .piece-shape.clip-rect, .piece-shape[data-shape="clip-rect"])[data-shape-right="p"]{ --shape-multiple-right:1; }
+:is(.piece-container.clip-zigzag .piece-shape, .piece-container[data-shape="clip-zigzag"] .piece-shape, .piece-shape.clip-zigzag , .piece-shape[data-shape="clip-zigzag"] , .piece-container.clip-rect .piece-shape, .piece-container[data-shape="clip-rect"] .piece-shape, .piece-shape.clip-rect, .piece-shape[data-shape="clip-rect"])[data-shape-right="n"]{ --shape-multiple-right:-1; }
 
-:is(.piece-container.clip-zigzag .piece-shape, .piece-shape.clip-zigzag , .piece-container.clip-rect .piece-shape, .piece-shape.clip-rect)[data-shape-bottom="0"]{ --shape-multiple-bottom:0; }
-:is(.piece-container.clip-zigzag .piece-shape, .piece-shape.clip-zigzag , .piece-container.clip-rect .piece-shape, .piece-shape.clip-rect)[data-shape-bottom="p"]{ --shape-multiple-bottom:1; }
-:is(.piece-container.clip-zigzag .piece-shape, .piece-shape.clip-zigzag , .piece-container.clip-rect .piece-shape, .piece-shape.clip-rect)[data-shape-bottom="n"]{ --shape-multiple-bottom:-1; }
+:is(.piece-container.clip-zigzag .piece-shape, .piece-container[data-shape="clip-zigzag"] .piece-shape, .piece-shape.clip-zigzag , .piece-shape[data-shape="clip-zigzag"] , .piece-container.clip-rect .piece-shape, .piece-container[data-shape="clip-rect"] .piece-shape, .piece-shape.clip-rect, .piece-shape[data-shape="clip-rect"])[data-shape-bottom="0"]{ --shape-multiple-bottom:0; }
+:is(.piece-container.clip-zigzag .piece-shape, .piece-container[data-shape="clip-zigzag"] .piece-shape, .piece-shape.clip-zigzag , .piece-shape[data-shape="clip-zigzag"] , .piece-container.clip-rect .piece-shape, .piece-container[data-shape="clip-rect"] .piece-shape, .piece-shape.clip-rect, .piece-shape[data-shape="clip-rect"])[data-shape-bottom="p"]{ --shape-multiple-bottom:1; }
+:is(.piece-container.clip-zigzag .piece-shape, .piece-container[data-shape="clip-zigzag"] .piece-shape, .piece-shape.clip-zigzag , .piece-shape[data-shape="clip-zigzag"] , .piece-container.clip-rect .piece-shape, .piece-container[data-shape="clip-rect"] .piece-shape, .piece-shape.clip-rect, .piece-shape[data-shape="clip-rect"])[data-shape-bottom="n"]{ --shape-multiple-bottom:-1; }
 
-:is(.piece-container.clip-zigzag .piece-shape, .piece-shape.clip-zigzag , .piece-container.clip-rect .piece-shape, .piece-shape.clip-rect)[data-shape-left="0"]{ --shape-multiple-left:0; }
-:is(.piece-container.clip-zigzag .piece-shape, .piece-shape.clip-zigzag , .piece-container.clip-rect .piece-shape, .piece-shape.clip-rect)[data-shape-left="p"]{ --shape-multiple-left:1; }
-:is(.piece-container.clip-zigzag .piece-shape, .piece-shape.clip-zigzag , .piece-container.clip-rect .piece-shape, .piece-shape.clip-rect)[data-shape-left="n"]{ --shape-multiple-left:-1; }
+:is(.piece-container.clip-zigzag .piece-shape, .piece-container[data-shape="clip-zigzag"] .piece-shape, .piece-shape.clip-zigzag , .piece-shape[data-shape="clip-zigzag"] , .piece-container.clip-rect .piece-shape, .piece-container[data-shape="clip-rect"] .piece-shape, .piece-shape.clip-rect, .piece-shape[data-shape="clip-rect"])[data-shape-left="0"]{ --shape-multiple-left:0; }
+:is(.piece-container.clip-zigzag .piece-shape, .piece-container[data-shape="clip-zigzag"] .piece-shape, .piece-shape.clip-zigzag , .piece-shape[data-shape="clip-zigzag"] , .piece-container.clip-rect .piece-shape, .piece-container[data-shape="clip-rect"] .piece-shape, .piece-shape.clip-rect, .piece-shape[data-shape="clip-rect"])[data-shape-left="p"]{ --shape-multiple-left:1; }
+:is(.piece-container.clip-zigzag .piece-shape, .piece-container[data-shape="clip-zigzag"] .piece-shape, .piece-shape.clip-zigzag , .piece-shape[data-shape="clip-zigzag"] , .piece-container.clip-rect .piece-shape, .piece-container[data-shape="clip-rect"] .piece-shape, .piece-shape.clip-rect, .piece-shape[data-shape="clip-rect"])[data-shape-left="n"]{ --shape-multiple-left:-1; }
 
 
 
 /* .piece-shape.mask-css */
-.piece-container.mask-css .piece-shape,
-.piece-shape.mask-css{
+.piece-container.mask-css .piece-shape, .piece-container[data-shape="mask-css"] .piece-shape,
+.piece-shape.mask-css , .piece-shape[data-shape="mask-css"]{
     --mask-css-n-top:#00000000;
     --mask-css-p-top:#ffffff00;
     --mask-css-n-right:#00000000;
@@ -189,14 +189,14 @@
     /* -webkit-mask-size: 100% 100%; */
 
 }
-:is(.piece-container.mask-css .piece-shape,.piece-shape.mask-css)[data-shape-top="n"]{ --mask-css-n-top:#000000ff; }
-:is(.piece-container.mask-css .piece-shape,.piece-shape.mask-css)[data-shape-top="p"]{ --mask-css-p-top:#ffffffff; }
-:is(.piece-container.mask-css .piece-shape,.piece-shape.mask-css)[data-shape-right="n"]{ --mask-css-n-right:#000000ff; }
-:is(.piece-container.mask-css .piece-shape,.piece-shape.mask-css)[data-shape-right="p"]{ --mask-css-p-right:#ffffffff; }
-:is(.piece-container.mask-css .piece-shape,.piece-shape.mask-css)[data-shape-bottom="n"]{ --mask-css-n-bottom:#000000ff; }
-:is(.piece-container.mask-css .piece-shape,.piece-shape.mask-css)[data-shape-bottom="p"]{ --mask-css-p-bottom:#ffffffff; }
-:is(.piece-container.mask-css .piece-shape,.piece-shape.mask-css)[data-shape-left="n"]{ --mask-css-n-left:#000000ff; }
-:is(.piece-container.mask-css .piece-shape,.piece-shape.mask-css)[data-shape-left="p"]{ --mask-css-p-left:#ffffffff; }
+:is(.piece-container.mask-css .piece-shape, .piece-container[data-shape="mask-css"] .piece-shape , .piece-shape.mask-css , .piece-shape[data-shape="mask-css"])[data-shape-top="n"]{ --mask-css-n-top:#000000ff; }
+:is(.piece-container.mask-css .piece-shape, .piece-container[data-shape="mask-css"] .piece-shape , .piece-shape.mask-css , .piece-shape[data-shape="mask-css"])[data-shape-top="p"]{ --mask-css-p-top:#ffffffff; }
+:is(.piece-container.mask-css .piece-shape, .piece-container[data-shape="mask-css"] .piece-shape , .piece-shape.mask-css , .piece-shape[data-shape="mask-css"])[data-shape-right="n"]{ --mask-css-n-right:#000000ff; }
+:is(.piece-container.mask-css .piece-shape, .piece-container[data-shape="mask-css"] .piece-shape , .piece-shape.mask-css , .piece-shape[data-shape="mask-css"])[data-shape-right="p"]{ --mask-css-p-right:#ffffffff; }
+:is(.piece-container.mask-css .piece-shape, .piece-container[data-shape="mask-css"] .piece-shape , .piece-shape.mask-css , .piece-shape[data-shape="mask-css"])[data-shape-bottom="n"]{ --mask-css-n-bottom:#000000ff; }
+:is(.piece-container.mask-css .piece-shape, .piece-container[data-shape="mask-css"] .piece-shape , .piece-shape.mask-css , .piece-shape[data-shape="mask-css"])[data-shape-bottom="p"]{ --mask-css-p-bottom:#ffffffff; }
+:is(.piece-container.mask-css .piece-shape, .piece-container[data-shape="mask-css"] .piece-shape , .piece-shape.mask-css , .piece-shape[data-shape="mask-css"])[data-shape-left="n"]{ --mask-css-n-left:#000000ff; }
+:is(.piece-container.mask-css .piece-shape, .piece-container[data-shape="mask-css"] .piece-shape , .piece-shape.mask-css , .piece-shape[data-shape="mask-css"])[data-shape-left="p"]{ --mask-css-p-left:#ffffffff; }
 
 .mask-css-test-bg{
     --mask-css-n-top:#000000FF;
