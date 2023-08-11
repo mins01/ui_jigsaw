@@ -150,7 +150,8 @@
 
 /* .piece-shape.mask-css */
 .piece-container.mask-css .piece-shape, .piece-container[data-shape="mask-css"] .piece-shape,
-.piece-shape.mask-css , .piece-shape[data-shape="mask-css"]{
+.piece-shape.mask-css , .piece-shape[data-shape="mask-css"],
+.mask-css-test-bg{
     --mask-css-n-top:#00000000;
     --mask-css-p-top:#ffffff00;
     --mask-css-n-right:#00000000;
@@ -160,7 +161,7 @@
     --mask-css-n-left:#00000000;
     --mask-css-p-left:#ffffff00;
 
-    -webkit-mask-image:
+    --mask-image:
     radial-gradient(ellipse var(--shape-uneven-x) var(--shape-uneven-y)  at left 60% top 21%, var(--mask-css-n-top) 48%, transparent 50%, transparent 0 ),
     radial-gradient(ellipse var(--shape-uneven-x) var(--shape-uneven-y)  at left 79% top 62%, var(--mask-css-n-right) 48%, transparent 50%, transparent 0 ),
     radial-gradient(ellipse var(--shape-uneven-x) var(--shape-uneven-y)  at left 40% top 79%, var(--mask-css-n-bottom) 48%, transparent 50%, transparent 0 ),
@@ -177,17 +178,9 @@
     radial-gradient(ellipse var(--shape-uneven-x) var(--shape-uneven-y) at right 22.5% top 22.5%, #ff0000ff 48%, transparent 50%, transparent 0 ),
     radial-gradient(ellipse var(--shape-uneven-x) var(--shape-uneven-y) at left 22.5% bottom 22.5%, #ff0000ff 48%, transparent 50%, transparent 0 ),
     radial-gradient(ellipse var(--shape-uneven-x) var(--shape-uneven-y) at right 22.5% bottom 22.5%, #ff0000ff 48%, transparent 50%, transparent 0 );
-
-    -webkit-mask-size: contain,contain,contain,contain,contain,contain,contain,contain,70% 55% ,55% 70% , contain, contain , contain , contain;
-    -webkit-mask-repeat: no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repeat;
-    -webkit-mask-position: center,center,center,center,center,center,center,center,center,center,center,center,center ;
-    /* -webkit-mask-composite: destination-out,destination-out,destination-out,destination-out,destination-in; */
-    -webkit-mask-composite: destination-out,destination-out,destination-out,destination-out,source-over,source-over,source-over,source-over,source-over,source-over,source-over,source-over,source-over  ;
-
-
-    mask-size: 100% 100%; 
-    /* -webkit-mask-size: 100% 100%; */
-
+    --mask-size:contain,contain,contain,contain,contain,contain,contain,contain,70% 55% ,55% 70% , contain, contain , contain , contain;
+    /* --webkit-mask-composite:destination-out,destination-out,destination-out,destination-out,source-over,source-over,source-over,source-over,source-over,source-over,source-over,source-over,source-over ; */
+    --mask-composite:add;
 }
 :is(.piece-container.mask-css .piece-shape, .piece-container[data-shape="mask-css"] .piece-shape , .piece-shape.mask-css , .piece-shape[data-shape="mask-css"])[data-shape-top="n"]{ --mask-css-n-top:#000000ff; }
 :is(.piece-container.mask-css .piece-shape, .piece-container[data-shape="mask-css"] .piece-shape , .piece-shape.mask-css , .piece-shape[data-shape="mask-css"])[data-shape-top="p"]{ --mask-css-p-top:#ffffffff; }
@@ -197,6 +190,32 @@
 :is(.piece-container.mask-css .piece-shape, .piece-container[data-shape="mask-css"] .piece-shape , .piece-shape.mask-css , .piece-shape[data-shape="mask-css"])[data-shape-bottom="p"]{ --mask-css-p-bottom:#ffffffff; }
 :is(.piece-container.mask-css .piece-shape, .piece-container[data-shape="mask-css"] .piece-shape , .piece-shape.mask-css , .piece-shape[data-shape="mask-css"])[data-shape-left="n"]{ --mask-css-n-left:#000000ff; }
 :is(.piece-container.mask-css .piece-shape, .piece-container[data-shape="mask-css"] .piece-shape , .piece-shape.mask-css , .piece-shape[data-shape="mask-css"])[data-shape-left="p"]{ --mask-css-p-left:#ffffffff; }
+/* for firefox . deving*/
+@supports (mask-mode: alpha) {
+    .piece-container.mask-css .piece-shape, .piece-container[data-shape="mask-css"] .piece-shape,
+    .piece-shape.mask-css , .piece-shape[data-shape="mask-css"],
+    .mask-css-test-bg{
+        
+    }   
+}
+
+.piece-container.mask-css .piece-shape, .piece-container[data-shape="mask-css"] .piece-shape,
+.piece-shape.mask-css , .piece-shape[data-shape="mask-css"]{
+    -webkit-mask-image:var(--mask-image);
+    mask-image:var(--mask-image);
+    -webkit-mask-size: var(--mask-size);
+    mask-size: var(--mask-size);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-composite: var(--webkit-mask-composite);
+    mask-composite: var(--mask-composite);
+    
+
+
+}
+
 
 .mask-css-test-bg{
     --mask-css-n-top:#000000FF;
@@ -209,28 +228,9 @@
     --mask-css-p-left:#ffffffFF;
     
     background-color: #abc;
-    background-image: 
-    radial-gradient(ellipse var(--shape-uneven-x) var(--shape-uneven-y)  at left 60% top 21%, var(--mask-css-n-top) 48%, transparent 50%, transparent 0 ),
-    radial-gradient(ellipse var(--shape-uneven-x) var(--shape-uneven-y)  at left 79% top 62%, var(--mask-css-n-right) 48%, transparent 50%, transparent 0 ),
-    radial-gradient(ellipse var(--shape-uneven-x) var(--shape-uneven-y)  at left 40% top 79%, var(--mask-css-n-bottom) 48%, transparent 50%, transparent 0 ),
-    radial-gradient(ellipse var(--shape-uneven-x) var(--shape-uneven-y)  at left 21% top 42%, var(--mask-css-n-left) 48%, transparent 50%, transparent 0 ),
+    background-image:var(--mask-image) !important;
 
-    radial-gradient(ellipse calc(var(--shape-uneven-x) * 0.9) calc(var(--shape-uneven-y) * 0.9)  at left 40% top 9%, var(--mask-css-p-top) 48%, transparent 50%, transparent 0 ),
-    radial-gradient(ellipse calc(var(--shape-uneven-x) * 0.9) calc(var(--shape-uneven-y) * 0.9)  at left 91% top 42%, var(--mask-css-p-right) 48%, transparent 50%, transparent 0 ),
-    radial-gradient(ellipse calc(var(--shape-uneven-x) * 0.9) calc(var(--shape-uneven-y) * 0.9)  at left 60% top 91%, var(--mask-css-p-bottom) 48%, transparent 50%, transparent 0 ),
-    radial-gradient(ellipse calc(var(--shape-uneven-x) * 0.9) calc(var(--shape-uneven-y) * 0.9)  at left 9% top 62%, var(--mask-css-p-left) 48%, transparent 50%, transparent 0 ),
-
-    linear-gradient(#ffc107 100%,transparent 0),
-    linear-gradient(#ffc107 100%,transparent 0) ,
-    
-    radial-gradient(ellipse var(--shape-uneven-x) var(--shape-uneven-y) at left 22.5% top 22.5%, #ff0000ff 48%, transparent 50%, transparent 0 ),
-    radial-gradient(ellipse var(--shape-uneven-x) var(--shape-uneven-y) at right 22.5% top 22.5%, #ff0000ff 48%, transparent 50%, transparent 0 ),
-    radial-gradient(ellipse var(--shape-uneven-x) var(--shape-uneven-y) at left 22.5% bottom 22.5%, #ff0000ff 48%, transparent 50%, transparent 0 ),
-    radial-gradient(ellipse var(--shape-uneven-x) var(--shape-uneven-y) at right 22.5% bottom 22.5%, #ff0000ff 48%, transparent 50%, transparent 0 )
-    !important;
-
-    
-    background-size: contain,contain,contain,contain,contain,contain,contain,contain,70% 55% ,55% 70% , contain, contain , contain , contain !important;
-    background-repeat: no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repeat !important;
-    background-position: center,center,center,center,center,center,center,center,center,center,center,center,center !important;
+    background-size: var(--mask-size) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
 }
